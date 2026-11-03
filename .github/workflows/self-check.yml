@@ -1,0 +1,84 @@
+name: Self Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install
+        run: pip install --upgrade pip
+
+      - name: Syntax check
+        run: |
+          python3 -m py_compile skills/three-tier-kb/scripts/kb_index.py
+          python3 -m py_compile skills/three-tier-kb/scripts/kb_gate.py
+          python3 -m py_compile skills/three-tier-kb/scripts/kb_sync.py
+
+      - name: Smoke test (build + query)
+        run: |
+          set -e
+          WORK=$(mktemp -d)
+          VAULT="$WORK/vault"
+          mkdir -p "$VAULT/项目/Alpha"
+          cat > "$VAULT/项目/Alpha/索引.md" <<'EOF'
+          ---
+          title: Alpha索引
+          type: 项目索引
+          owner: ci
+          status: active
+          version: 1.0
+          effective_date: 2026-10-01
+          review_date: 2026-12-01
+          source: ci
+          confidentiality: internal
+          ---
+
+          # Alpha
+
+          - [[方案]]
+          EOF
+          cat > "$VAULT/项目/Alpha/方案.md" <<'EOF'
+          ---
+          title: 方案
+          type: 技术方案
+          owner: ci
+          status: active
+          version: 1.0
+          effective_date: 2026-10-01
+          review_date: 2026-12-01
+          source: ci
+          confidentiality: internal
+          ---
+
+          # 方案
+
+          [[索引]]
+          EOF
+          S=skills/three-tier-kb/scripts
+          python3 $S/kb_index.py --vault "$VAULT" --init
+          python3 $S/kb_index.py --vault "$VAULT" --build
+          python3 $S/kb_index.py --vault "$VAULT" --query "Alpha"
+          python3 $S/kb_gate.py "$VAULT"
+
+      - name: Secret scan
+        run: |
+          if grep -rnE 'sk-[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9]{30,}|-----BEGIN [A-Z ]*PRIVATE KEY-----' \
+               --exclude-dir=.git . ; then
+            echo "::error::Potential secret detected"
+            exit 1
+          fi
+          echo "No secrets found."

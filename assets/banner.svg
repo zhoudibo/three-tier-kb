@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="Three-Tier KB — local knowledge base three-tier architecture">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="55%" stop-color="#161b22"/>
+      <stop offset="100%" stop-color="#1c2333"/>
+    </linearGradient>
+    <linearGradient id="l0" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#a371f7"/>
+    </linearGradient>
+    <linearGradient id="l1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3fb950"/>
+      <stop offset="100%" stop-color="#56d364"/>
+    </linearGradient>
+    <linearGradient id="l2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d29922"/>
+      <stop offset="100%" stop-color="#e3b341"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff"/>
+      <stop offset="100%" stop-color="#3fb950"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#bg)"/>
+  <g opacity="0.16" stroke="#58a6ff" stroke-width="0.7">
+    <circle cx="250" cy="90" r="46" fill="none"/><circle cx="250" cy="90" r="96" fill="none"/>
+    <circle cx="250" cy="90" r="150" fill="none"/>
+    <circle cx="980" cy="310" r="60" fill="none"/><circle cx="980" cy="310" r="115" fill="none"/>
+  </g>
+  <g opacity="0.5" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="11">
+    <text x="40" y="46" letter-spacing="3.4">THREE-TIER KB</text>
+    <text x="40" y="366" letter-spacing="1.6" fill="#6e7681">LOCAL KNOWLEDGE BASE · MULTI-AGENT SHARED · QUALITY GATED</text>
+  </g>
+
+  <text x="40" y="112" fill="#e6edf3" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="46" font-weight="700" letter-spacing="-1.1">Three-Tier KB</text>
+  <text x="40" y="146" fill="#8b949e" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif" font-size="16">本地知识库三层架构 · 多 AI 客户端共享 · 12 项质量门禁</text>
+
+  <g filter="url(#glow)" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+    <rect x="40" y="182" width="330" height="52" rx="9" fill="#161b22" stroke="url(#l0)" stroke-width="2"/>
+    <text x="58" y="205" fill="#58a6ff" font-size="13" font-weight="700" letter-spacing="1.4">L0 · META INDEX</text>
+    <text x="58" y="223" fill="#8b949e" font-size="11.5">vault_index / topic_index / graph_index</text>
+    <text x="352" y="214" fill="#58a6ff" font-size="14" font-weight="600" text-anchor="end">&lt;1s</text>
+
+    <rect x="40" y="244" width="330" height="52" rx="9" fill="#161b22" stroke="url(#l1)" stroke-width="2"/>
+    <text x="58" y="267" fill="#3fb950" font-size="13" font-weight="700" letter-spacing="1.4">L1 · PROJECT INDEX</text>
+    <text x="58" y="285" fill="#8b949e" font-size="11.5">&lt;project&gt;/index.md — human / AI authored</text>
+    <text x="352" y="276" fill="#3fb950" font-size="14" font-weight="600" text-anchor="end">&lt;5s</text>
+
+    <rect x="40" y="306" width="330" height="52" rx="9" fill="#161b22" stroke="url(#l2)" stroke-width="2"/>
+    <text x="58" y="329" fill="#e3b341" font-size="13" font-weight="700" letter-spacing="1.4">L2 · RAW CONTENT</text>
+    <text x="58" y="347" fill="#8b949e" font-size="11.5">vault Markdown — single source of truth</text>
+    <text x="352" y="338" fill="#e3b341" font-size="14" font-weight="600" text-anchor="end">&lt;30s</text>
+  </g>
+
+  <g stroke="#30363d" stroke-width="1.6" fill="none">
+    <path d="M392 208 H 470"/>
+    <path d="M392 270 H 470"/>
+    <path d="M392 332 H 470"/>
+  </g>
+  <g fill="#58a6ff">
+    <path d="M470 208 l -7 -4 v 8 z"/><path d="M470 270 l -7 -4 v 8 z"/><path d="M470 332 l -7 -4 v 8 z"/>
+  </g>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+    <rect x="486" y="182" width="300" height="52" rx="9" fill="#0d1117" stroke="#30363d" stroke-width="1.4"/>
+    <text x="636" y="204" fill="#e6edf3" font-size="13" font-weight="600" text-anchor="middle">AI 客户端 A</text>
+    <text x="636" y="222" fill="#6e7681" font-size="11" text-anchor="middle">Hermes · Codex CLI · IDE agent</text>
+
+    <rect x="486" y="244" width="300" height="52" rx="9" fill="#0d1117" stroke="#30363d" stroke-width="1.4"/>
+    <text x="636" y="266" fill="#e6edf3" font-size="13" font-weight="600" text-anchor="middle">kb_sync.py</text>
+    <text x="636" y="284" fill="#6e7681" font-size="11" text-anchor="middle">hash baseline · incremental · 5-min cron</text>
+
+    <rect x="486" y="306" width="300" height="52" rx="9" fill="#0d1117" stroke="#30363d" stroke-width="1.4"/>
+    <text x="636" y="328" fill="#e6edf3" font-size="13" font-weight="600" text-anchor="middle">kb_gate.py</text>
+    <text x="636" y="346" fill="#6e7681" font-size="11" text-anchor="middle">12-point quality gate · blocks bad batches</text>
+  </g>
+
+  <g stroke="#30363d" stroke-width="1.6" fill="none">
+    <path d="M798 208 H 856 V 270 H 886"/>
+    <path d="M798 270 H 886"/>
+    <path d="M798 332 H 856 V 270"/>
+  </g>
+  <g fill="#3fb950">
+    <path d="M886 270 l -7 -4 v 8 z"/>
+  </g>
+
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+    <rect x="900" y="182" width="262" height="176" rx="11" fill="#0d1117" stroke="url(#accent)" stroke-width="2"/>
+    <text x="1031" y="212" fill="#e6edf3" font-size="14" font-weight="700" text-anchor="middle">Why it survives</text>
+    <g font-size="12.5" fill="#8b949e">
+      <text x="922" y="244">▪ 查询快且一致</text>
+      <text x="922" y="270">▪ 新内容进得来</text>
+      <text x="922" y="296">▪ 退化看得见</text>
+      <text x="922" y="322">▪ 图谱连得起</text>
+    </g>
+    <text x="1031" y="348" fill="#6e7681" font-size="11" text-anchor="middle">zero dependencies · MIT</text>
+  </g>
+</svg>
